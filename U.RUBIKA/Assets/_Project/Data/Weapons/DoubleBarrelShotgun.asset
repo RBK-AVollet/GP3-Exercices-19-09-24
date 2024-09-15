@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d02af17a857848448143830665a85dad, type: 3}
+  m_Name: DoubleBarrelShotgun
+  m_EditorClassIdentifier: 
+  weaponName: Double Barrel Shotgun
+  description: This is a powerful shotgun.
+  attackRatePerSecond: 0.33
+  bulletPrefab: {fileID: 3696653157053913984, guid: 4d8ff2a077a65b442807a6fe9cdfd9b2,
+    type: 3}
