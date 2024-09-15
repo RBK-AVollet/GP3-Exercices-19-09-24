@@ -2,7 +2,7 @@
 using UnityEngine;
 
 namespace Rubika {
-    public class DoubleBarrelShotgun : Weapon {
+    public class DoubleBarrelShotgun : Gun {
         [Header("References")]
         [SerializeField]
         [Tooltip("The left and right fire points of the shotgun.")]
@@ -10,11 +10,11 @@ namespace Rubika {
 
         [SerializeField] SoundData _shootSound;
         
-        public override void Fire() {
+        public override void Shoot() {
             for (int i = 0; i < _firePoints.Length; i++) {
                 Vector3 dir = _manager.GetShootDirFromFirePoint(_firePoints[i]);
-                var bullet = Instantiate(_weaponData.bulletPrefab, _firePoints[i].position, Quaternion.identity);
-                bullet.Initialize(dir);
+                var bullet = Instantiate(_gunData.bulletPrefab, _firePoints[i].position, Quaternion.identity);
+                bullet.Initialize(dir, _gunData.damage);
             }
 
             SoundController.Instance.CreateSound()

@@ -3,9 +3,9 @@ using Padrox.Acelab.Timers;
 using UnityEngine;
 
 namespace Rubika {
-    public class WeaponManager : MonoBehaviour {
+    public class GunManager : MonoBehaviour {
         [Header("Weapons")]
-        [SerializeField] Weapon[] _weapons;
+        [SerializeField] Gun[] _weapons;
         int _currentWeapon;
         
         [Header("References")]
@@ -40,7 +40,7 @@ namespace Rubika {
             if (!_input.Fire) return;
             if (!_weaponCooldownTimer.IsFinished) return;
             
-            _weapons[_currentWeapon].Fire();
+            _weapons[_currentWeapon].Shoot();
             _weaponCooldownTimer.Start();
         }
 
@@ -54,7 +54,7 @@ namespace Rubika {
                 _weapons[i].gameObject.SetActive(i == _currentWeapon);
             }
             
-            float cooldown = 1f / _weapons[_currentWeapon].WeaponData.attackRatePerSecond;
+            float cooldown = 1f / _weapons[_currentWeapon].GunData.fireRate;
             if(_weaponCooldownTimer == null)
                 _weaponCooldownTimer = new CountdownTimer(cooldown);
             else
