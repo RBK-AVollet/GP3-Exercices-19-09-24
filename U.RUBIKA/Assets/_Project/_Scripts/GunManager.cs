@@ -65,7 +65,7 @@ namespace Rubika {
             Vector3 crosshairScreenPos = _crosshair.position;
             Vector3 crosshairWorldPos = _camera.ScreenToWorldPoint(crosshairScreenPos.With(z: _camera.nearClipPlane));
 
-            const float maxDistance = 1000f;
+            const float maxDistance = 30f;
             bool contact = Physics.Raycast(crosshairWorldPos, _camera.transform.forward, out RaycastHit hit, maxDistance);
             
             Vector3 targetPoint = contact ? hit.point : crosshairWorldPos + _camera.transform.forward * maxDistance;
